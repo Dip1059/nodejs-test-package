@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Dip1059/nodejs-test-package/issues"
   },
-  "homepage": "https://github.com/Dip1059/nodejs-test-package#readme"
+  "homepage": "https://github.com/Dip1059/nodejs-test-package#readme",
+  "dependencies": {
+    "node": ">=14.15.5"
+  }
 }
