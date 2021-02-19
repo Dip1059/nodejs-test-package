@@ -5,7 +5,7 @@ const v1 = "v1";
 const envProduction = 1;
 const envSandBox = 2;
 const productionBaseUrl = "localhost";
-const sandBoxBaseUrl = "collpay-dev.dev03.squaredbyte.com";
+const sandBoxBaseUrl = "collpay-dev.dev.squaredbyte.com";
 
 let reqOptions = {
     version: v1
@@ -59,6 +59,11 @@ class Collpay {
     }
 
     getTransaction(id) {
+        if(!id) {
+            return new Promise(function(resolve, reject) {
+                resolve({"success":false, "message":"Invalid transaction id."});
+            });
+        }
         return  makeRequest("/transactions/"+id, "GET");
     }
 
